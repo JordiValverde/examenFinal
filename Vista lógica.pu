@@ -1,0 +1,33 @@
+@startuml
+
+    class elector{
+        void Votar()
+    }
+
+    class candidato{
+        String partido
+    }
+
+    class cabina{
+        String location
+        String code
+    }
+
+    class administrador{
+        registrarElector()
+        registrarCandidato()
+        registrarCabina()
+    }
+
+    class persona{
+        String dni
+        String nombre
+    }
+
+persona --|> candidato
+persona --|> elector
+administrador -- elector
+administrador -- candidato
+administrador -- cabina
+
+@enduml
